@@ -20,19 +20,19 @@
 					secondMax = firstMax;
 					firstMax=arr[i];
 				}
-				else if(arr[i]>secondMax && arr[i]!=firstMax)secondMax = arr[i];
+				else if(arr[i]>secondMax && arr[i]!==firstMax)secondMax = arr[i];
 			}
 			if(same)return Number.NEGATIVE_INFINITY;
-			else return secondMax;
+			else return secondMax; 
 		}
 
-		// function Main() {
-		// 	var n = parseInt(prompt("Enter the number of elements")) ;
-		// 	var arr = [];
-		// 	for (var i = 0; i < n; i++) {
-		// 		arr[i] = parseInt(prompt("Enter element " + (i+1)));
-		// 	}
-		// 	alert(secondHighest(arr));
+		function Main() {
+			var n = parseInt(prompt("Enter the number of elements")) ;
+			var arr = [];
+			for (var i = 0; i < n; i++) {
+				arr[i] = parseInt(prompt("Enter element " + (i+1)));
+			}
+			alert(secondHighest(arr));
 			
 		}
 		Main();
