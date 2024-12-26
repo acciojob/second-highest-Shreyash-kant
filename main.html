@@ -10,16 +10,27 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
-			
+			if(arr.length===0 || arr.length==1) return Number.NEGATIVE_INFINITY;
+			let firstMax = Number.NEGATIVE_INFINITY;
+			let secondMax = Number.NEGATIVE_INFINITY;
+			let same = true; 
+			for(let i=0;i<arr.length;++i){
+				if(same) same = arr[0]!==arr[i]?false:true;
+				if(arr[i]>=firstMax)firstMax=arr[i];
+				else if(arr[i]>=secondMax)secondMax = arr[i];
+			}
+			if(same)return Number.NEGATIVE_INFINITY;
+			else return secondMax;
 		}
 
 		function Main() {
-			var n = prompt("Enter the number of elements");
+			var n = parseInt(prompt("Enter the number of elements")) ;
 			var arr = [];
 			for (var i = 0; i < n; i++) {
-				arr[i] = prompt("Enter element " + (i+1));
+				arr[i] = parseInt(prompt("Enter element " + (i+1)));
 			}
 			alert(secondHighest(arr));
+			
 		}
 		Main();
 	</script>
